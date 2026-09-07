@@ -38,8 +38,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_walmart_analysis:
     # Applies to all files under models/example/
-    example:
-      schema: example
     silver:
       schema: silver
       materialized: table
