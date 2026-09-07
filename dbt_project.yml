@@ -9,6 +9,13 @@ config-version: 2
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
 
+vars:
+   wrk_schema: RAW
+   file_format_json: WALMART_DB.RAW.CSV_FORMAT
+   purge_status: FALSE
+   stage_name: WALMART_DB.RAW.WALMART_DATA_STAGE
+   rawhist_db: WALMART_DB
+
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
