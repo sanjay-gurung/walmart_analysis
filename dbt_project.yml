@@ -10,10 +10,10 @@ config-version: 2
 profile: 'default'
 
 vars:
-   wrk_schema: RAW
-   file_format_json: WALMART_DB.RAW.CSV_FORMAT
+   wrk_schema: BRONZE
+   file_format_json: WALMART_DB.BRONZE.CSV_FORMAT
    purge_status: FALSE
-   stage_name: WALMART_DB.RAW.WALMART_DATA_STAGE
+   stage_name: WALMART_DATA_STAGE      
    rawhist_db: WALMART_DB
 
 # These configurations specify where dbt should look for different types of files.
@@ -45,6 +45,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_walmart_analysis:
     # Applies to all files under models/example/
+    bronze:
+      materialized: view
     silver:
       schema: silver
       materialized: table
