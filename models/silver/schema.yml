@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+
+    - name: source
+
+      database: WALMART_DB  
+
+      schema: BRONZE
+
+      tables:
+
+        - name: STORES_COPY
+        - name: DEPARTMENT_COPY
+        - name: FACT_COPY
